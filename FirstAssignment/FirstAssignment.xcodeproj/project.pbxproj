@@ -14,6 +14,7 @@
 		4CA12C7C28EDF2BE00CBAB1C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CA12C7B28EDF2BE00CBAB1C /* Assets.xcassets */; };
 		4CA12C7F28EDF2BE00CBAB1C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CA12C7D28EDF2BE00CBAB1C /* LaunchScreen.storyboard */; };
 		4CA12C8728EDF75C00CBAB1C /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA12C8628EDF75C00CBAB1C /* SignInViewController.swift */; };
+		4CA12C8B28EEEA7D00CBAB1C /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA12C8A28EEEA7D00CBAB1C /* SignUpViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		4CA12C7E28EDF2BE00CBAB1C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4CA12C8028EDF2BE00CBAB1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4CA12C8628EDF75C00CBAB1C /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		4CA12C8A28EEEA7D00CBAB1C /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				4CA12C7D28EDF2BE00CBAB1C /* LaunchScreen.storyboard */,
 				4CA12C8028EDF2BE00CBAB1C /* Info.plist */,
 				4CA12C8628EDF75C00CBAB1C /* SignInViewController.swift */,
+				4CA12C8A28EEEA7D00CBAB1C /* SignUpViewController.swift */,
 			);
 			path = FirstAssignment;
 			sourceTree = "<group>";
@@ -145,6 +148,7 @@
 				4CA12C7728EDF2BD00CBAB1C /* ViewController.swift in Sources */,
 				4CA12C7328EDF2BD00CBAB1C /* AppDelegate.swift in Sources */,
 				4CA12C7528EDF2BD00CBAB1C /* SceneDelegate.swift in Sources */,
+				4CA12C8B28EEEA7D00CBAB1C /* SignUpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

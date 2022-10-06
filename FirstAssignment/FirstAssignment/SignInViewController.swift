@@ -60,8 +60,8 @@ class SignInViewController: UIViewController {
     private let signInButton: UIButton = {
         let button = UIButton(frame: CGRect(x: 20, y: 449, width: 350, height: 54))
         button.setTitle("카카오계정 로그인", for: .normal)
-        button.setTitleColor(.black, for: .normal)
-        // UIColor에서 정확한 색을 찾을 수가 없어서 추출했습니다
+        button.setTitleColor(UIColor(red: 0.3, green: 0.3, blue: 0.3, alpha: 1.0), for: .normal)
+        button.titleLabel?.font = .boldSystemFont(ofSize: 17)
         button.backgroundColor = UIColor(red: 0.96, green: 0.96, blue: 0.96, alpha: 1.0)
         return button
     }()
@@ -69,8 +69,17 @@ class SignInViewController: UIViewController {
     private let signUpButton: UIButton = {
         let button = UIButton(frame: CGRect(x: 20, y: 515, width: 350, height: 54))
         button.setTitle("새로운 카카오계정 만들기", for: .normal)
-        button.setTitleColor(.black, for: .normal)
+        button.setTitleColor(UIColor(red: 0.3, green: 0.3, blue: 0.3, alpha: 1.0), for: .normal)
+        button.titleLabel?.font = .boldSystemFont(ofSize: 17)
         button.backgroundColor = UIColor(red: 0.96, green: 0.96, blue: 0.96, alpha: 1.0)
+        return button
+    }()
+    
+    private let findAccountOrPasswordButton: UIButton = {
+        let button = UIButton(frame: CGRect(x: 95, y: 580, width: 200, height: 30))
+        button.setTitle("카카오계정 또는 비밀번호 찾기", for: .normal)
+        button.setTitleColor(UIColor(red: 0.4, green: 0.4, blue: 0.4, alpha: 1.0), for: .normal)
+        button.titleLabel?.font = .boldSystemFont(ofSize: 14.5)
         return button
     }()
     
@@ -78,22 +87,11 @@ class SignInViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         
-        let components: [Any] = [startKakaotalkLabel, ifHasAccountLabel, emailOrNumberTextField, dividingLineView, passwordTextField, dividingLineView2, signInButton, signUpButton]
+        let components: [Any] = [startKakaotalkLabel, ifHasAccountLabel, emailOrNumberTextField, dividingLineView, passwordTextField, dividingLineView2, signInButton, signUpButton, findAccountOrPasswordButton]
         components.forEach {
             view.addSubview($0 as! UIView)
         }
 
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

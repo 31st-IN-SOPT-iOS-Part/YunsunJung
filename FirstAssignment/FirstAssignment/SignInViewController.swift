@@ -91,7 +91,6 @@ class SignInViewController: UIViewController {
         components.forEach {
             view.addSubview($0 as! UIView)
         }
-
     }
-
+    
 }

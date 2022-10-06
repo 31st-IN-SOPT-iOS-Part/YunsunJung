@@ -26,11 +26,42 @@ class SignInViewController: UIViewController {
         return label
     }()
     
+    private let emailOrNumberTextField: UITextField = {
+        let textField = UITextField(frame: CGRect(x: 22, y: 298, width: 350, height: 40))
+        // 사실 attributedPlaceholder 까지는 공식문서 보고 이해했는데 NSAttributedString은 공식문서 봐도 잘 모르겠더라고요...
+        textField.attributedPlaceholder = NSAttributedString(string: "이메일 또는 전화번호", attributes: [.foregroundColor : UIColor.lightGray])
+        textField.font = .systemFont(ofSize: 20, weight: .medium)
+        return textField
+    }()
+    
+    private let dividingLineView: UIView = {
+        let view = UIView(frame: CGRect(x: 20, y: 350, width: 350, height: 1))
+        view.backgroundColor = .lightGray
+        return view
+    }()
+    
+    private let passwordTextField: UITextField = {
+        let textField = UITextField(frame: CGRect(x: 22, y: 361, width: 350, height: 40))
+        // 사실 attributedPlaceholder 까지는 공식문서 보고 이해했는데 NSAttributedString은 공식문서 봐도 잘 모르겠더라고요...
+        textField.attributedPlaceholder = NSAttributedString(string: "비밀번호", attributes: [.foregroundColor : UIColor.lightGray])
+        textField.font = .systemFont(ofSize: 20, weight: .medium)
+        // 비밀번호 입력값 가리고 키패드를 비밀번호에 사용되는 문자들로 제한함
+        textField.isSecureTextEntry = true
+        textField.textContentType = .password
+        return textField
+    }()
+    
+    private let dividingLineView2: UIView = {
+        let view = UIView(frame: CGRect(x: 20, y: 410, width: 350, height: 1))
+        view.backgroundColor = .lightGray
+        return view
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         
-        let components: [Any] = [startKakaotalkLabel, ifHasAccountLabel]
+        let components: [Any] = [startKakaotalkLabel, ifHasAccountLabel, emailOrNumberTextField, dividingLineView, passwordTextField, dividingLineView2]
         components.forEach {
             view.addSubview($0 as! UIView)
         }

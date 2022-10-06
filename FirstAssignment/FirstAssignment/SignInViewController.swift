@@ -57,7 +57,7 @@ class SignInViewController: UIViewController {
         return view
     }()
     
-    private let SignInButton: UIButton = {
+    private let signInButton: UIButton = {
         let button = UIButton(frame: CGRect(x: 20, y: 449, width: 350, height: 54))
         button.setTitle("카카오계정 로그인", for: .normal)
         button.setTitleColor(.black, for: .normal)
@@ -66,7 +66,7 @@ class SignInViewController: UIViewController {
         return button
     }()
     
-    private let SignUpButton: UIButton = {
+    private let signUpButton: UIButton = {
         let button = UIButton(frame: CGRect(x: 20, y: 515, width: 350, height: 54))
         button.setTitle("새로운 카카오계정 만들기", for: .normal)
         button.setTitleColor(.black, for: .normal)
@@ -78,7 +78,7 @@ class SignInViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         
-        let components: [Any] = [startKakaotalkLabel, ifHasAccountLabel, emailOrNumberTextField, dividingLineView, passwordTextField, dividingLineView2, SignInButton, SignUpButton]
+        let components: [Any] = [startKakaotalkLabel, ifHasAccountLabel, emailOrNumberTextField, dividingLineView, passwordTextField, dividingLineView2, signInButton, signUpButton]
         components.forEach {
             view.addSubview($0 as! UIView)
         }

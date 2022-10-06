@@ -57,11 +57,28 @@ class SignInViewController: UIViewController {
         return view
     }()
     
+    private let SignInButton: UIButton = {
+        let button = UIButton(frame: CGRect(x: 20, y: 449, width: 350, height: 54))
+        button.setTitle("카카오계정 로그인", for: .normal)
+        button.setTitleColor(.black, for: .normal)
+        // UIColor에서 정확한 색을 찾을 수가 없어서 추출했습니다
+        button.backgroundColor = UIColor(red: 0.96, green: 0.96, blue: 0.96, alpha: 1.0)
+        return button
+    }()
+    
+    private let SignUpButton: UIButton = {
+        let button = UIButton(frame: CGRect(x: 20, y: 515, width: 350, height: 54))
+        button.setTitle("새로운 카카오계정 만들기", for: .normal)
+        button.setTitleColor(.black, for: .normal)
+        button.backgroundColor = UIColor(red: 0.96, green: 0.96, blue: 0.96, alpha: 1.0)
+        return button
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         
-        let components: [Any] = [startKakaotalkLabel, ifHasAccountLabel, emailOrNumberTextField, dividingLineView, passwordTextField, dividingLineView2]
+        let components: [Any] = [startKakaotalkLabel, ifHasAccountLabel, emailOrNumberTextField, dividingLineView, passwordTextField, dividingLineView2, SignInButton, SignUpButton]
         components.forEach {
             view.addSubview($0 as! UIView)
         }

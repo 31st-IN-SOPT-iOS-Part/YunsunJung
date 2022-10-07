@@ -70,6 +70,7 @@ class SignUpViewController: UIViewController {
         button.setTitleColor(UIColor(red: 0.3, green: 0.3, blue: 0.3, alpha: 1.0), for: .normal)
         button.titleLabel?.font = .boldSystemFont(ofSize: 17)
         button.backgroundColor = UIColor(red: 0.96, green: 0.96, blue: 0.96, alpha: 1.0)
+        button.addTarget(self, action: #selector(touchupSignUpButton), for: .touchUpInside)
         return button
     }()
     
@@ -82,5 +83,20 @@ class SignUpViewController: UIViewController {
             view.addSubview($0 as! UIView)
         }
     }
+    
+    private func presentToHasLoggedInVC() {
+        let hasLoggedInVC = HasLoggedInViewController()
+        hasLoggedInVC.modalPresentationStyle = .formSheet
+        
+        if let emailOrNumber = emailOrNumberTextField.text {
+            hasLoggedInVC.dataBind(emailOrNumber: emailOrNumber)
+        }
+        
+        self.present(hasLoggedInVC, animated: true, completion: nil)
+    }
 
+    @objc
+    private func touchupSignUpButton() {
+        presentToHasLoggedInVC()
+    }
 }

@@ -1,8 +1,8 @@
 //
 //  HasLoggedInViewController.swift
-//  FirstAssignment
+//  SecondAssignment
 //
-//  Created by 정윤선 on 2022/10/06.
+//  Created by 정윤선 on 2022/10/13.
 //
 
 import UIKit
@@ -10,7 +10,7 @@ import UIKit
 class HasLoggedInViewController: UIViewController {
 
     private let welcomeLabel: UILabel = {
-        let label = UILabel(frame: CGRect(x: 20, y: 285, width: 350, height: 100))
+        let label = UILabel()
         label.numberOfLines = 2
         label.font = .boldSystemFont(ofSize: 23)
         
@@ -28,12 +28,12 @@ class HasLoggedInViewController: UIViewController {
     }()
     
     private let signUpButton: UIButton = {
-        let button = UIButton(frame: CGRect(x: 20, y: 515, width: 350, height: 54))
+        let button = UIButton()
         button.setTitle("확인", for: .normal)
         button.setTitleColor(UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 1.0), for: .normal)
         button.titleLabel?.font = .boldSystemFont(ofSize: 23)
         button.backgroundColor = UIColor(red: 0.98, green: 0.89, blue: 0.3, alpha: 1.0)
-        button.addTarget(self, action: #selector(touchupBackButton), for: .touchUpInside)
+        button.addTarget(self, action: #selector(touchupConfirmButton), for: .touchUpInside)
         return button
     }()
     
@@ -41,10 +41,7 @@ class HasLoggedInViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         
-        let components: [Any] = [welcomeLabel, signUpButton]
-        components.forEach {
-            view.addSubview($0 as! UIView)
-        }
+        setLayout()
     }
     
     func dataBind(emailOrNumber: String) {
@@ -52,8 +49,33 @@ class HasLoggedInViewController: UIViewController {
     }
     
     @objc
-       private func touchupBackButton() {
-           self.dismiss(animated: true, completion: nil)
+       private func touchupConfirmButton() {
+           dismiss(animated: true)
        }
     
+}
+
+// MARK: - Extensions
+extension HasLoggedInViewController {
+    
+    // MARK: - Layout Helpers
+    
+    private func setLayout() {
+        [welcomeLabel, signUpButton].forEach {
+            view.addSubview($0)
+        }
+        
+        welcomeLabel.snp.makeConstraints { make in
+            make.top.equalTo(self.view.safeAreaLayoutGuide).offset(270)
+            make.centerX.equalTo(self.view.safeAreaLayoutGuide)
+        }
+        
+        signUpButton.snp.makeConstraints { make in
+            make.top.equalTo(self.welcomeLabel.snp.bottom).offset(150)
+            make.centerX.equalTo(self.welcomeLabel)
+            make.width.equalTo(350)
+            make.height.equalTo(55)
+        }
+
+    }
 }
